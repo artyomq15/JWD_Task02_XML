@@ -73,7 +73,7 @@ public class TagStack {
     }
 
     private String getSimpleOpenTagWithContent(String content) {
-        return tags.pop() + content;
+        return tags.pop() + content.trim();
     }
 
     private String getComplexOpenTag() {
