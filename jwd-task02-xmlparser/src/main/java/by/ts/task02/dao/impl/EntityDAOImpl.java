@@ -10,12 +10,12 @@ import java.io.InputStreamReader;
 
 public class EntityDAOImpl implements EntityDAO {
 
-    private BufferedReader FILE_READER = new BufferedReader(
+    private BufferedReader FILE_PATH = new BufferedReader(
             new InputStreamReader(EntityDAOImpl.class.getResourceAsStream("/resources.xml")));
 
     @Override
     public Entity parse() {
-        try (BufferedReader reader = FILE_READER) {
+        try (BufferedReader reader = FILE_PATH) {
             String line;
             Parser parser = new Parser();
             while ((line = reader.readLine()) != null) {

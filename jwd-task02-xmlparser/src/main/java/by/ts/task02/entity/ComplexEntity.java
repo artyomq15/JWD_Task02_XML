@@ -52,10 +52,8 @@ public class ComplexEntity extends Entity {
 
     @Override
     public String toString() {
-        String result = super.toString();
-        for (Entity entity : entities) {
-            result += entity;
-        }
-        return result;
+        return "ComplexEntity{" +
+                "entities=" + entities +
+                '}';
     }
 }

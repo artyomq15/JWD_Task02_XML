@@ -71,22 +71,10 @@ public abstract class Entity {
 
     @Override
     public String toString() {
-        String result = printTabs(this.depth);
-        result += tag;
-        String stringAttributes = "";
-        for (String key : attributes.keySet()) {
-            stringAttributes += "[ " + key + "=\"" + attributes.get(key) + "\" ]";
-        }
-        result += stringAttributes;
-        return result;
-
-    }
-
-    private String printTabs(int depth) {
-        String result = "\n";
-        for (int i = 0; i < depth - 1; i++) {
-            result += "\t";
-        }
-        return result;
+        return "Entity{" +
+                "tag='" + tag + '\'' +
+                ", attributes=" + attributes +
+                ", depth=" + depth +
+                '}';
     }
 }
