@@ -21,6 +21,6 @@ public class SimpleEntity extends Entity {
 
     @Override
     public String toString() {
-        return super.toString() + " - " + content;
+        return super.toString() + ": " + content;
     }
 }
