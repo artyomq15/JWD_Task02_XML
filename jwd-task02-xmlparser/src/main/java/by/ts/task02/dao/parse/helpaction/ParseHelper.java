@@ -5,9 +5,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by Lenovo on 10/26/2017.
- */
 public final class ParseHelper {
     private static final String FOR_TAG_NAME = "<([^\\s/]+)\\s*((\\S+=\"[^\"]*\"\\s*)*)/?>";
     private static final int TAG_NAME_GROUP = 1;

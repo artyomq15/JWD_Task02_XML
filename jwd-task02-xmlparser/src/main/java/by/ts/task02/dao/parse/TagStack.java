@@ -1,9 +1,8 @@
 package by.ts.task02.dao.parse;
 
-import by.ts.task02.dao.parse.build.BuilderCommand;
 import by.ts.task02.dao.parse.build.BuilderDirector;
+import by.ts.task02.dao.parse.constants.TagConstants;
 import by.ts.task02.entity.Entity;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 import java.util.Stack;
 
@@ -15,8 +14,6 @@ public class TagStack {
 
     private Stack<String> tags = new Stack<>();
     private int stackDepth = 0;
-
-
 
 
     public TagStack() {
@@ -43,7 +40,7 @@ public class TagStack {
         }
         if (tag.matches(TagConstants.SELF_CLOSING_TAG)) {
             Entity entity = builderDirector.getBuilder("SELF_CLOSING_TAG").build(tag);
-            entity.setDepth(stackDepth+1);
+            entity.setDepth(stackDepth + 1);
             return entity;
         }
         if (tag.matches(TagConstants.XML_TAG)) {

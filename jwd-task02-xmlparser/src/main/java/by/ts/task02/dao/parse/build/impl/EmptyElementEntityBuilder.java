@@ -5,9 +5,6 @@ import by.ts.task02.dao.parse.helpaction.ParseHelper;
 import by.ts.task02.entity.EmptyElementEntity;
 import by.ts.task02.entity.Entity;
 
-import java.util.regex.Pattern;
-
-
 public class EmptyElementEntityBuilder implements BuilderCommand {
     @Override
     public Entity build(String tag) {

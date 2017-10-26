@@ -2,22 +2,19 @@ package by.ts.task02.entity;
 
 import java.util.Map;
 
-/**
- * Created by Lenovo on 10/25/2017.
- */
 public abstract class Entity {
     private String tag;
     private Map<String, String> attributes;
-
     private int depth;
 
-    public Entity(){}
+    public Entity() {
+    }
 
-    public Entity(String tag){
+    public Entity(String tag) {
         this.tag = tag;
     }
 
-    public Entity(String tag, Map<String, String> attributes){
+    public Entity(String tag, Map<String, String> attributes) {
         this.tag = tag;
         this.attributes = attributes;
     }
@@ -47,8 +44,29 @@ public abstract class Entity {
         this.attributes = attributes;
     }
 
-    public void addAttribute(String name, String value){
-        attributes.put(name,value);
+    public void addAttribute(String name, String value) {
+        attributes.put(name, value);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Entity)) return false;
+
+        Entity entity = (Entity) o;
+
+        if (depth != entity.depth) return false;
+        if (tag != null ? !tag.equals(entity.tag) : entity.tag != null) return false;
+        return attributes != null ? attributes.equals(entity.attributes) : entity.attributes == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = tag != null ? tag.hashCode() : 0;
+        result = 31 * result + (attributes != null ? attributes.hashCode() : 0);
+        result = 31 * result + depth;
+        return result;
     }
 
     @Override
@@ -56,17 +74,17 @@ public abstract class Entity {
         String result = printTabs(this.depth);
         result += tag;
         String stringAttributes = "";
-        for (String key : attributes.keySet()){
-            stringAttributes += "[ "+key+"=\""+attributes.get(key)+"\" ]";
+        for (String key : attributes.keySet()) {
+            stringAttributes += "[ " + key + "=\"" + attributes.get(key) + "\" ]";
         }
         result += stringAttributes;
-        return  result;
+        return result;
 
     }
 
-    private String printTabs(int depth){
+    private String printTabs(int depth) {
         String result = "\n";
-        for (int i = 0; i<depth-1;i++ ){
+        for (int i = 0; i < depth - 1; i++) {
             result += "\t";
         }
         return result;

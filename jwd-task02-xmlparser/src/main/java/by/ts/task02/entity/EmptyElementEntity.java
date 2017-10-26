@@ -3,7 +3,7 @@ package by.ts.task02.entity;
 
 import java.util.Map;
 
-public class EmptyElementEntity extends Entity{
+public class EmptyElementEntity extends Entity {
     public EmptyElementEntity() {
     }
 

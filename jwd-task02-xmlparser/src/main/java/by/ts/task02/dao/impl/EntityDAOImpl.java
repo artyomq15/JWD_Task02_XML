@@ -1,6 +1,5 @@
 package by.ts.task02.dao.impl;
 
-
 import by.ts.task02.dao.EntityDAO;
 import by.ts.task02.dao.parse.Parser;
 import by.ts.task02.entity.Entity;
