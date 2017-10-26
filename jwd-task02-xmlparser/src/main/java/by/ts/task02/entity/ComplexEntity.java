@@ -2,11 +2,12 @@ package by.ts.task02.entity;
 
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 public class ComplexEntity extends Entity {
-    List<Entity> entities = new ArrayList<Entity>();
+    LinkedList<Entity> entities = new LinkedList<>();
 
     public ComplexEntity(){}
 
@@ -23,18 +24,16 @@ public class ComplexEntity extends Entity {
         return entities;
     }
 
-    public void setEntities(List<Entity> entities) {
+    public void setEntities(LinkedList<Entity> entities) {
         this.entities = entities;
     }
 
     public void addEntity(Entity entity){
-        entities.add(entity);
+        entities.addFirst(entity);
     }
 
     @Override
     public String toString() {
-        return super.toString() + "ComplexEntity{" +
-                "entities=" + entities +
-                '}';
+        return super.toString() + entities;
     }
 }

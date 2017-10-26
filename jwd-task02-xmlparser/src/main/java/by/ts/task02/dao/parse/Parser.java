@@ -1,9 +1,8 @@
 package by.ts.task02.dao.parse;
 
+import by.ts.task02.entity.ComplexEntity;
 import by.ts.task02.entity.Entity;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -11,7 +10,7 @@ import java.util.regex.Pattern;
 public class Parser {
     private TagStack tagStack = new TagStack();
 
-    private Map<Integer, Entity> entities = new HashMap<>();
+    private Stack<Entity> entities = new Stack<>();
 
 
     public void parseLine(String line){
@@ -20,25 +19,29 @@ public class Parser {
 
         while (matcher.find()){
             String tag = matcher.group();
-            Entity entity = tagStack.handleTag(tag);
+            Entity entity = tagStack.getEntityFromTag(tag);
             if (entity!=null){
-                System.out.println(entity.toString());
+                handleEntity(entity);
 
-                //проверка по мапе
+               // System.out.println(entity);
             }
-
         }
 
 
     }
 
-
-
-    public void addEntity(int depth, Entity entity){
-
+    private void handleEntity(Entity entity){
+        if (entities.isEmpty() || entity.getDepth() == entities.peek().getDepth()){
+            entities.add(entity);
+        } else {
+            while (!entities.isEmpty() && entities.peek().getDepth() - entity.getDepth() == 1){
+                ((ComplexEntity) entity).addEntity(entities.pop());
+            }
+            entities.add(entity);
+        }
     }
 
     public Entity getEntity(){
-        return null;
+        return entities.pop();
     }
 }

@@ -24,9 +24,11 @@ public class EntityDAOImpl implements EntityDAO {
             }
             return parser.getEntity();
 
+
         } catch (IOException e) {
             System.out.println(e.getMessage());
             return null;
         }
+
     }
 }

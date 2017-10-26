@@ -38,7 +38,7 @@ public class Runner {
 */
         DAOFactory instance = DAOFactory.getInstance();
         EntityDAO entityDAO = instance.getEntityDAO();
-        entityDAO.parse();
+        System.out.println(entityDAO.parse());
 
         /*System.out.println(ParseHelper.getAttributes("<tag ddd=\"123\" dd=\"23\" d=\"   \">"));
         System.out.println(ParseHelper.getNameTag("<tag ddd=\"123\">"));

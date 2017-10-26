@@ -22,7 +22,7 @@ public class TagStack {
     public TagStack() {
     }
 
-    public Entity handleTag(String tag) {
+    public Entity getEntityFromTag(String tag) {
         if (tag.matches(TagConstants.OPEN_TAG)) {
             tags.add(tag);
             stackDepth++;
@@ -51,20 +51,6 @@ public class TagStack {
         } else {
             tags.add(tag);
             return null;
-        }
-    }
-
-    private String getTagType(String tag) {
-        if (tag.matches(TagConstants.OPEN_TAG)) {
-            return "OPEN_TAG";
-        } else if (tag.matches(TagConstants.CLOSE_TAG)) {
-            return "CLOSE_TAG";
-        } else if (tag.matches(TagConstants.SELF_CLOSING_TAG)) {
-            return "SELF_CLOSING_TAG";
-        } else if (tag.matches(TagConstants.XML_TAG)) {
-            return "XML";
-        } else {
-            return "TEXT";
         }
     }
 

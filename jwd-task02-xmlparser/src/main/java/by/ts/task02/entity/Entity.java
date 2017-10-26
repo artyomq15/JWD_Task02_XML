@@ -53,10 +53,11 @@ public abstract class Entity {
 
     @Override
     public String toString() {
-        return "Entity{" +
+        return  tag;
+        /*return "Entity{" +
                 "tag='" + tag + '\'' +
                 ", attributes=" + attributes +
                 ", depth=" + depth +
-                '}';
+                '}';*/
     }
 }
