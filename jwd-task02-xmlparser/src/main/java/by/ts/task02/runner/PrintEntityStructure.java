@@ -8,17 +8,17 @@ import by.ts.task02.entity.SimpleEntity;
 public class PrintEntityStructure {
     public static void printStructureToConsole(Entity entity){
         String result = getTagAndAttributesToString(entity);
-        if (entity instanceof ComplexEntity){
+
+        if (entity instanceof SimpleEntity){
+            result+=" : " + ((SimpleEntity) entity).getContent();
             System.out.println(result);
-            for (Entity entireComplexEntity : ((ComplexEntity) entity).getEntities()){
-                printStructureToConsole(entireComplexEntity);
-            }
-        } else if (entity instanceof SimpleEntity){
-            String simpleResult = getTagAndAttributesToString(entity);
-            simpleResult+=" : " + ((SimpleEntity) entity).getContent();
-            System.out.println(simpleResult);
         } else {
             System.out.println(result);
+            if (entity instanceof ComplexEntity){
+                for (Entity entireComplexEntity : ((ComplexEntity) entity).getEntities()){
+                    printStructureToConsole(entireComplexEntity);
+                }
+            }
         }
     }
 
