@@ -1,7 +1,9 @@
 package by.ts.task02.entity;
 
 
-public class SimpleEntity extends Entity {
+import java.io.Serializable;
+
+public class SimpleEntity extends Entity implements Serializable{
     String content;
 
     public SimpleEntity() {

@@ -1,10 +1,11 @@
 package by.ts.task02.entity;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class ComplexEntity extends Entity {
+public class ComplexEntity extends Entity implements Serializable{
     LinkedList<Entity> entities = new LinkedList<>();
 
     public ComplexEntity() {
