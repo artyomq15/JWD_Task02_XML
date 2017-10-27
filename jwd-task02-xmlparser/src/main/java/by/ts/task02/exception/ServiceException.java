@@ -1,6 +1,5 @@
 package by.ts.task02.exception;
 
-
 public class ServiceException extends Exception{
     public ServiceException() {
     }

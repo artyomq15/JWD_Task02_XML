@@ -17,7 +17,6 @@ public class ComplexEntity extends Entity implements Serializable{
 
     public ComplexEntity(String tag, Map<String, String> attributes) {
         super(tag, attributes);
-
     }
 
     public List<Entity> getEntities() {

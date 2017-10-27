@@ -1,6 +1,5 @@
 package by.ts.task02.dao.parse.build.impl;
 
-
 import by.ts.task02.dao.parse.build.BuilderCommand;
 import by.ts.task02.dao.parse.helpaction.ParseHelper;
 import by.ts.task02.entity.ComplexEntity;
